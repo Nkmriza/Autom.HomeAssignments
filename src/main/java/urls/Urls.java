@@ -6,5 +6,6 @@ public class Urls {
     public static final String taxi = "https://taxi838.ua/ru/dnepr/";
     public static final String klopotenko = "https://klopotenko.com/";
     public static final String shop = "http://www.automationpractice.pl/index.php";
-
+    public static final String blogpost =" http://only-testing-blog.blogspot.com/2014/01/textbox.html";
+    public static final String guru = "https://demo.guru99.com/test/drag_drop.html";
 }
