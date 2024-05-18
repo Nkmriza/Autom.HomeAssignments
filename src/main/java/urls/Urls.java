@@ -8,4 +8,8 @@ public class Urls {
     public static final String shop = "http://www.automationpractice.pl/index.php";
     public static final String blogpost =" http://only-testing-blog.blogspot.com/2014/01/textbox.html";
     public static final String guru = "https://demo.guru99.com/test/drag_drop.html";
+    public static final String google = "https://www.google.com/search";
+    public static final String guinnes = "https://www.guinnessworldrecords.com/account/register?";
+    public static final String schoolsSubm =  "https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit";
+    public static final String hyrtu = "https://www.hyrtutorials.com/p/alertsdemo.html";
 }
