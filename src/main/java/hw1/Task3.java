@@ -9,15 +9,15 @@ public class Task3 {
 елемента, тексту даного елемента, а також координати центру контейнера даного елемента.
  */
 
-    public void infoAboutElement (WebElement ElementInfo){
+    public void infoAboutElement(WebElement ElementInfo) {
         String elID = ElementInfo.getAttribute("id");
         String tagName = ElementInfo.getTagName();
         String className = ElementInfo.getAttribute("class");
         String attr = ElementInfo.getAttribute("name");
         String text = ElementInfo.getText();
 
-        int centreX = ElementInfo.getLocation().x + ElementInfo.getSize().width/2;
-        int centreY = ElementInfo.getLocation().y + ElementInfo.getSize().height/2;
+        int centreX = ElementInfo.getLocation().x + ElementInfo.getSize().width / 2;
+        int centreY = ElementInfo.getLocation().y + ElementInfo.getSize().height / 2;
 
         Point coordinates = new Point(centreX, centreY);
 
