@@ -37,13 +37,28 @@ public class GoogleTask {
             System.out.println("No cookies button");
         }
         Thread.sleep(3000);
-        WebElement nameField = driver.findElement(By.linkText("First name"));
+      /*  WebElement frameElement = driver.findElement(By.id("iframeResult"));
+        driver.switchTo().frame(frameElement);*/
+        Thread.sleep(2000);
+        WebElement nameField = driver.findElement(By.id("fname"));
+        nameField.clear();
         nameField.sendKeys("Liza");
 
-        WebElement surnameField = driver.findElement(By.linkText("Last name"));
+        WebElement surnameField = driver.findElement(By.id("lname"));
         surnameField.clear();
         surnameField.sendKeys("Yakuba");
-//НЕ ПОЛУЧАЕТСЯ
+
+        /*Set<String> windowHandles = driver.getWindowHandles();
+String currentWindowHandle = driver.getWindowHandle();
+String link1WindowHandle = null;
+for (String windowHandle : windowHandles) {
+    driver.switchTo().window(windowHandle);
+    if (driver.getTitle().contains("Create Account")) {
+        link1WindowHandle = windowHandle;
+        break;
+    }
+}*/
+
 
     }
 }
