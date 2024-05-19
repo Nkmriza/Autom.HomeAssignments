@@ -1,10 +1,7 @@
 package hw3;
 
 import driver_init.DriverInit;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import urls.Urls;
 
 public class Tab2 {
@@ -22,12 +19,15 @@ public class Tab2 {
         Thread.sleep(2000);
         Alert alert2 = driver.switchTo().alert();
         alert2.dismiss();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 500)");
         WebElement thirdEl = driver.findElement(By.cssSelector("#promptBox"));
         thirdEl.click();
+        Thread.sleep(2000);
         Alert alert3 = driver.switchTo().alert();
         alert3.sendKeys("Final step of this task");
         alert3.accept();
+        Thread.sleep(3000);
         driver.close();
-
     }
 }
