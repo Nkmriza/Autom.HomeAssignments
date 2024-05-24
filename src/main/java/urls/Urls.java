@@ -12,4 +12,5 @@ public class Urls {
     public static final String guinnes = "https://www.guinnessworldrecords.com/account/register?";
     public static final String schoolsSubm =  "https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit";
     public static final String hyrtu = "https://www.hyrtutorials.com/p/alertsdemo.html";
+    public static final String foxtrot = " https://www.foxtrot.com.ua/";
 }
