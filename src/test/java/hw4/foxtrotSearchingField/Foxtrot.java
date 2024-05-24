@@ -23,13 +23,15 @@ public class Foxtrot {
         driver.manage().window().maximize();
         waiters = new Waiters(driver);
         driver.get(Urls.foxtrot);
-        try {WebElement citiesField = driver.findElement(By.xpath("//*[@id='user-location-popup']/div/div[3]/div/span"));
+        try {
+            WebElement citiesField = driver.findElement(By.xpath("//*[@id='user-location-popup']/div/div[3]/div/span"));
             citiesField.click();
         } catch (NoSuchElementException e) {
             System.out.println("No Such Fields");
         }
     }
-   @AfterClass
+
+    @AfterClass
     public void close() {
         driver.quit();
     }
@@ -41,21 +43,21 @@ public class Foxtrot {
         searchField.sendKeys(searchItem);
         driver.findElement(By.xpath("//*[@id='js-fix-header']/div/div/div[3]/input[2]")).click();
         Thread.sleep(2000);
-       WebElement result = driver.findElement(By.tagName("h1"));
-       WebElement unsuccessfulResult = driver.findElement(By.id("search-page-container"));
+        WebElement result = driver.findElement(By.tagName("h1"));
+        WebElement unsuccessfulResult = driver.findElement(By.id("search-page-container"));
         Thread.sleep(2000);
         if (result.getText().contains(searchItem)) {
             Assert.assertTrue(result.getText().contains(searchItem), searchItem);
-        } else if (unsuccessfulResult.getText().contains(searchItem)){
+        } else if (unsuccessfulResult.getText().contains(searchItem)) {
             Assert.assertTrue(unsuccessfulResult.getText().contains(searchItem), searchItem);
-        }else {
+        } else {
             System.out.println("Запит не відповідає результату");
         }
     }
 
     @DataProvider(name = "search")
     public Object[][] searchItem() {
-        return new Object[][] {
+        return new Object[][]{
                 {"машина"},
                 {"input"},
                 {"розуміння"}

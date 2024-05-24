@@ -16,6 +16,7 @@ public class Groups {
     testngGroupingHome.xml у якому послідовно проганялися спочатку файли групи first,
     а потім файли групи second. P.S. У кожній групі тести мають відбуватися у порядку зростання.*/
     static WebDriver driver;
+
     @BeforeClass(groups = {"first", "second"})
     public void setUp() {
         driver = DriverInit.setUpDriver();
