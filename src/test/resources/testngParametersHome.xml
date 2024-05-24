@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="AllTests">
+        <parameter name="searchItem" value="машина"/>
+        <parameter name="searchItem" value="input"/>
+        <parameter name="searchItem" value="розуміння"/>
+        <classes>
+            <class name="hw4.foxtrotSearchingField.Foxtrot"/>
+        </classes>
+    </test>
+</suite>
