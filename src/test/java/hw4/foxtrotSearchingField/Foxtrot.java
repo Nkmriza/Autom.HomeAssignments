@@ -22,7 +22,12 @@ public class Foxtrot {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         waiters = new Waiters(driver);
-
+        driver.get(Urls.foxtrot);
+        try {WebElement citiesField = driver.findElement(By.xpath("//*[@id='user-location-popup']/div/div[3]/div/span"));
+            citiesField.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No Such Fields");
+        }
     }
    @AfterClass
     public void close() {
@@ -31,27 +36,20 @@ public class Foxtrot {
 
     @Test(dataProvider = "search")
     public void foxtrotSearchingFieldResult(String searchItem) throws InterruptedException {
-        driver.get(Urls.foxtrot);
-        Thread.sleep(3000);
-
-        try {WebElement citiesField = driver.findElement(By.xpath("//*[@id='user-location-popup']/div/div[3]/div/span"));
-          citiesField.click();
-        } catch (NoSuchElementException e) {
-            System.out.println("No Such Fields");
-        }
-
+        Thread.sleep(2000);
         WebElement searchField = driver.findElement(By.xpath("//*[@id='js-fix-header']/div/div/div[3]/input[1]"));
         searchField.sendKeys(searchItem);
         driver.findElement(By.xpath("//*[@id='js-fix-header']/div/div/div[3]/input[2]")).click();
         Thread.sleep(2000);
-       /* driver.findElement(By.cssSelector(".filter-switcher__popup_notification_close")).click();*/
        WebElement result = driver.findElement(By.tagName("h1"));
-       WebElement unsuccResult = driver.findElement(By.xpath("//*[@id='search-page-container']/div[3]/div/div/div/div/div/div[1]/div[1]"));
-       /* Assert.assertTrue(unsuccResult.getText().contains(searchItem));*/
+       WebElement unsuccessfulResult = driver.findElement(By.id("search-page-container"));
+        Thread.sleep(2000);
         if (result.getText().contains(searchItem)) {
             Assert.assertTrue(result.getText().contains(searchItem), searchItem);
-        } else if (unsuccResult.getText().contains(searchItem)){
-            Assert.assertTrue(unsuccResult.getText().contains(searchItem),  searchItem);
+        } else if (unsuccessfulResult.getText().contains(searchItem)){
+            Assert.assertTrue(unsuccessfulResult.getText().contains(searchItem), searchItem);
+        }else {
+            System.out.println("Запит не відповідає результату");
         }
     }
 
