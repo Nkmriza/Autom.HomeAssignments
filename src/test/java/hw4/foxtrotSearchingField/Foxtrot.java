@@ -60,7 +60,8 @@ public class Foxtrot {
         return new Object[][]{
                 {"машина"},
                 {"input"},
-                {"розуміння"}
+                {"розуміння"},
+                {"авпва"}
         };
     }
 }
